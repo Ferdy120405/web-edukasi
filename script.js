@@ -195,8 +195,8 @@ const iframeContainer = document.getElementById('iframeContainer');
 const modalTitle = document.getElementById('modalTitle');
 
 function openModal(videoId, title) {
-    iframeContainer.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
-    modalTitle.innerHTML = `${title} <br><a href="https://www.youtube.com/watch?v=${videoId}" target="_blank" style="display:inline-block; margin-top:10px; font-size:14px; color:#ff5e7e; text-decoration:none;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Buka di YouTube jika video tidak bisa diputar</a>`;
+    iframeContainer.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1" title="${title}" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+    modalTitle.innerHTML = `${title} <br><a href="https://www.youtube.com/watch?v=${videoId}" target="_blank" rel="noopener noreferrer" aria-label="Buka video di tab baru" style="display:inline-block; margin-top:10px; font-size:14px; color:#ff5e7e; text-decoration:none;"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Buka di YouTube jika video tidak bisa diputar</a>`;
     modal.classList.add('active');
     document.body.style.overflow = 'hidden'; // Prevent scrolling when modal open
 }
@@ -229,4 +229,22 @@ filterBtns.forEach(btn => {
 // Initial render
 document.addEventListener('DOMContentLoaded', () => {
     renderVideos();
+});
+
+// Back to Top Logic
+const backToTopBtn = document.getElementById('backToTop');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        backToTopBtn.classList.add('show');
+    } else {
+        backToTopBtn.classList.remove('show');
+    }
+});
+
+backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 });

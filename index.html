@@ -4,6 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Kumpulan video edukatif, lagu anak, dan pembelajaran interaktif untuk anak-anak Indonesia.">
+    <meta name="keywords" content="video edukasi anak, belajar berhitung, lagu anak, dunia anak pintar, edustream kids">
+    <meta property="og:title" content="Dunia Anak Pintar - Video Edukatif">
+    <meta property="og:description" content="Kumpulan video ceria dan edukatif untuk anak hebat Indonesia.">
+    <meta property="og:type" content="website">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
     <title>Dunia Anak Pintar - Video Edukatif</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;800&display=swap"
@@ -25,12 +33,18 @@
         </nav>
     </header>
 
+    <!-- Ad Slot Component: Top Banner -->
+    <div class="ad-container" aria-label="Advertisement space">
+        <p>Ruang Iklan (728x90) <br><small>Letakkan script iklan banner Anda di sini</small></p>
+    </div>
+
     <section class="hero">
         <div class="hero-content">
             <h1>Mari Belajar sambil Bermain! 🚀</h1>
             <p>Kumpulan video edukatif super seru untuk anak-anak hebat Indonesia. Yuk, tonton videonya dan tambah ilmu
                 baru setiap hari!</p>
-            <a href="#videos" class="btn-primary">Mulai Menonton <i class="fa-solid fa-play"></i></a>
+            <a href="#videos" class="btn-primary" aria-label="Mulai Menonton Video">Mulai Menonton <i
+                    class="fa-solid fa-play" aria-hidden="true"></i></a>
         </div>
         <div class="hero-image">
             <img src="https://images.unsplash.com/photo-1540324155974-752320b9e847?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
@@ -42,10 +56,11 @@
     <section class="categories" id="categories">
         <h2 class="section-title">Pilih Topik Belajar 🎨</h2>
         <div class="category-list">
-            <button class="cat-btn active" data-filter="all">Semua</button>
-            <button class="cat-btn" data-filter="math">Matematika 🔢</button>
-            <button class="cat-btn" data-filter="science">Hewan & Alam 🐘</button>
-            <button class="cat-btn" data-filter="language">Musik & Cerita 🎶</button>
+            <button class="cat-btn active" data-filter="all" aria-label="Tampilkan semua kategori">Semua</button>
+            <button class="cat-btn" data-filter="math" aria-label="Kategori Matematika">Matematika 🔢</button>
+            <button class="cat-btn" data-filter="science" aria-label="Kategori Hewan dan Alam">Hewan & Alam 🐘</button>
+            <button class="cat-btn" data-filter="language" aria-label="Kategori Musik dan Cerita">Musik & Cerita
+                🎶</button>
         </div>
     </section>
 
@@ -56,9 +71,9 @@
     </section>
 
     <!-- Video Modal Popup -->
-    <div class="modal" id="videoModal">
+    <div class="modal" id="videoModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
         <div class="modal-content">
-            <span class="close-btn">&times;</span>
+            <span class="close-btn" aria-label="Tutup video" role="button" tabindex="0">&times;</span>
             <div class="iframe-container" id="iframeContainer">
                 <!-- iframe embedded here -->
             </div>
@@ -66,8 +81,18 @@
         </div>
     </div>
 
+    <!-- Ad Slot Component: Bottom Banner -->
+    <div class="ad-container" aria-label="Advertisement space">
+        <p>Ruang Iklan (728x90) <br><small>Letakkan script iklan banner Anda di sini</small></p>
+    </div>
+
+    <!-- Back to top button -->
+    <button id="backToTop" class="back-to-top" aria-label="Kembali ke Atas"><i class="fa-solid fa-arrow-up"
+            aria-hidden="true"></i></button>
+
     <footer>
-        <p>&copy; 2026 Dunia Anak Pintar. Dibuat dengan <i class="fa-solid fa-heart" style="color: #ff5e7e;"></i> untuk
+        <p>&copy; 2026 Dunia Anak Pintar. Dibuat dengan <i class="fa-solid fa-heart" style="color: #ff5e7e;"
+                aria-hidden="true"></i> untuk
             ciptakan senyum bahagia.</p>
     </footer>
 

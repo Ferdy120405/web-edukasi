@@ -381,6 +381,56 @@ footer {
     font-size: 16px;
 }
 
+/* Ad Container */
+.ad-container {
+    text-align: center;
+    margin: 30px auto;
+    max-width: 728px;
+    min-height: 90px;
+    background: #e0e6ed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    color: #888;
+    font-size: 14px;
+    border: 2px dashed #cbd5e1;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 99;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: var(--tertiary);
+    color: var(--text-color);
+    box-shadow: 0 8px 25px rgba(255, 230, 109, 0.5);
+    transform: translateY(-5px);
+}
+
 /* Responsive */
 @media (max-width: 900px) {
     .hero {
