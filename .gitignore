@@ -1,0 +1,11 @@
+# Dokumen pribadi (tidak ikut diunggah ke GitHub/Vercel)
+storyboard/
+*.docx
+
+# File sistem & editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.vercel/
+node_modules/

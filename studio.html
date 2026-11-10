@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Studio Animasi – EduStream Kids</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#8B5CF6">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="studio">
+  <header id="site-header"></header>
+
+  <main class="container" id="main">
+    <section class="page-banner" style="--c:#FF6FAE;--cd:#E04889">
+      <span class="emoji" aria-hidden="true">🎬</span>
+      <div><h1>Studio Animasi</h1><p>Pratinjau animasi original dan rekam menjadi file video.</p></div>
+    </section>
+
+    <div class="panel" style="margin-top:24px">
+      <div class="form-row">
+        <label for="anim-sel">Animasi:</label>
+        <select id="anim-sel"></select>
+        <button class="btn btn-coral btn-sm" type="button" id="rec-btn">⏺ Rekam &amp; Unduh Video</button>
+      </div>
+      <p class="muted" id="status" aria-live="polite">Pilih animasi, lalu tekan tombol rekam. Perekaman berjalan sesuai durasi animasi.</p>
+    </div>
+
+    <div class="player-frame" id="player"></div>
+
+    <div class="panel prose" style="margin-top:24px">
+      <h2>📌 Catatan perekaman</h2>
+      <ul>
+        <li>Gunakan <b>Chrome atau Edge</b> versi terbaru. Hasilnya berupa <b>.mp4</b>; jika browser belum mendukung, hasilnya <b>.webm</b>.</li>
+        <li><b>Jangan pindah tab atau meminimalkan jendela</b> selama merekam, karena gambar akan tersendat.</li>
+        <li>Musik latar dan subtitle <b>ikut terekam</b>. Suara narator otomatis (text-to-speech) <b>tidak ikut terekam</b> karena dibuat oleh sistem operasi.</li>
+        <li>Agar narasi ikut terekam, <b>rekam suara Anda sendiri</b> untuk setiap adegan (mp3), simpan di folder <code>audio/</code>, lalu tambahkan <code>audio: "audio/siklus-air/1.mp3"</code> pada adegan yang sesuai di file animasi.</li>
+      </ul>
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+  <nav id="bottom-nav"></nav>
+
+  <script src="js/config.js"></script>
+  <script src="js/videos.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/anim-player.js"></script>
+  <script>
+    (function () {
+      var sel = document.getElementById("anim-sel");
+      var btn = document.getElementById("rec-btn");
+      var status = document.getElementById("status");
+      var holder = document.getElementById("player");
+      var ctrl = null;
+      var list = (window.VIDEOS || []).filter(function (v) { return v.animation; });
+
+      sel.innerHTML = list.map(function (v) {
+        return '<option value="' + v.animation + '">' + v.title.replace(/</g, "&lt;") + "</option>";
+      }).join("");
+
+      function fmt(s) { return Math.floor(s / 60) + ":" + String(Math.floor(s % 60)).padStart(2, "0"); }
+
+      function show(id) {
+        if (ctrl) ctrl.destroy();
+        holder.className = "player-frame";
+        return EduAnim.load(id).then(function (def) {
+          ctrl = EduAnim.createPlayer(holder, def);
+          return ctrl;
+        });
+      }
+
+      sel.addEventListener("change", function () { show(sel.value); });
+      if (list.length) show(list[0].animation);
+      else status.textContent = "Belum ada video dengan animasi original di js/videos.js.";
+
+      btn.addEventListener("click", function () {
+        if (!ctrl) return;
+        btn.disabled = true;
+        sel.disabled = true;
+        ctrl.record(function (t, d) {
+          status.textContent = "🔴 Merekam… " + fmt(t) + " / " + fmt(d) + " — jangan pindah tab.";
+        }).then(function (res) {
+          var url = URL.createObjectURL(res.blob);
+          var a = document.createElement("a");
+          a.href = url;
+          a.download = sel.value + "." + res.ext;
+          document.body.appendChild(a);
+          a.click();
+          a.remove();
+          status.innerHTML = "✅ Selesai! File <b>" + sel.value + "." + res.ext + "</b> (" +
+            (res.blob.size / 1048576).toFixed(1) + " MB) sudah diunduh.";
+        }).catch(function (err) {
+          status.textContent = "❌ " + err.message;
+        }).then(function () {
+          btn.disabled = false;
+          sel.disabled = false;
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

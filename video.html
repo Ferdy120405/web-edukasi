@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tonton Video – EduStream Kids</title>
+  <meta name="description" content="Tonton video edukasi, jawab kuis, dan kumpulkan bintang!">
+  <meta name="theme-color" content="#8B5CF6">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="video">
+  <header id="site-header"></header>
+
+  <main class="container" id="main">
+    <div class="ad-zone" data-ad="leaderboard"></div>
+
+    <div class="watch-layout" id="watch-root">
+      <article>
+        <div class="player-frame" id="player"></div>
+
+        <div class="watch-info">
+          <h1 id="watch-title"></h1>
+          <div class="meta" id="watch-meta"></div>
+          <p id="watch-desc" style="margin-top:12px"></p>
+          <div class="star-progress" id="star-progress"></div>
+          <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:18px">
+            <a class="btn btn-sun" id="next-btn" href="#" hidden>▶ Video Berikutnya</a>
+            <a class="btn btn-ghost" href="index.html">🏠 Beranda</a>
+          </div>
+        </div>
+
+        <section class="quiz" id="quiz" aria-label="Kuis"></section>
+      </article>
+
+      <aside aria-label="Video lainnya">
+        <!-- Iklan: kotak 300x250, dijauhkan dari tombol & pemutar video -->
+        <div class="ad-zone" data-ad="rectangle" style="margin-top:0"></div>
+        <h2 style="font-size:24px;margin-top:10px">🎬 Video Lainnya</h2>
+        <div class="side-list" id="related"></div>
+      </aside>
+    </div>
+
+    <div class="ad-zone" data-ad="native" style="margin-top:32px"></div>
+  </main>
+
+  <footer id="site-footer"></footer>
+  <nav id="bottom-nav"></nav>
+
+  <script src="js/config.js"></script>
+  <script src="js/videos.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

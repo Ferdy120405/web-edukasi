@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kebijakan Privasi – EduStream Kids</title>
+  <meta name="description" content="Kebijakan privasi EduStream Kids.">
+  <meta name="theme-color" content="#8B5CF6">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="info">
+  <header id="site-header"></header>
+
+  <main class="container" id="main">
+    <section class="page-banner" style="--c:#2ECC71;--cd:#1FA055">
+      <span class="emoji" aria-hidden="true">🔒</span>
+      <div><h1>Kebijakan Privasi</h1><p>Terakhir diperbarui: 9 November 2026</p></div>
+    </section>
+
+    <!-- CATATAN: Ini adalah TEMPLATE. Sesuaikan dengan kondisi situs Anda dan
+         konsultasikan dengan ahli hukum, terutama karena situs ini ditujukan untuk anak. -->
+    <div class="panel prose" style="margin-top:24px">
+      <h2>1. Data yang kami kumpulkan</h2>
+      <p>EduStream Kids <b>tidak meminta anak untuk mendaftar</b> dan tidak mengumpulkan nama, alamat email, nomor telepon, foto, atau lokasi anak.</p>
+      <p>Progres belajar (jumlah bintang, riwayat video yang ditonton, hasil kuis, dan pengaturan batas waktu) hanya disimpan di <b>penyimpanan lokal browser (localStorage)</b> pada perangkat Anda dan tidak dikirim ke server kami. Data ini dapat dihapus kapan saja melalui Pojok Orang Tua atau dengan menghapus data browser.</p>
+
+      <h2>2. Iklan pihak ketiga</h2>
+      <p>Situs ini menampilkan iklan dari jaringan iklan pihak ketiga (Adsterra) untuk menutup biaya operasional. Jaringan iklan dapat menggunakan cookie atau teknologi serupa dan mengumpulkan informasi teknis seperti alamat IP, jenis perangkat, dan browser. Pengelolaan data tersebut tunduk pada kebijakan privasi Adsterra.</p>
+      <p>Kami menempatkan iklan dengan label "IKLAN" yang jelas, terpisah dari tombol navigasi dan pemutar video, dan tidak menggunakan format iklan pop-up/popunder.</p>
+
+      <h2>3. Video YouTube</h2>
+      <p>Video ditampilkan melalui pemutar YouTube dalam mode privasi yang ditingkatkan (youtube-nocookie.com). Penggunaan pemutar tersebut tunduk pada kebijakan privasi Google.</p>
+
+      <h2>4. Peran orang tua</h2>
+      <p>Kami menganjurkan orang tua atau wali mendampingi anak saat menggunakan internet, termasuk situs ini. Orang tua dapat menggunakan fitur batas waktu di Pojok Orang Tua.</p>
+
+      <h2>5. Kontak</h2>
+      <p>Pertanyaan tentang privasi dapat dikirim ke <a id="contact-mail" style="color:var(--primary-dark)" href="#"></a>.</p>
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+  <nav id="bottom-nav"></nav>
+
+  <script src="js/config.js"></script>
+  <script src="js/videos.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    (function () {
+      var a = document.getElementById("contact-mail");
+      var m = (window.SITE_CONFIG || {}).contactEmail || "";
+      a.href = "mailto:" + m; a.textContent = m;
+    })();
+  </script>
+</body>
+</html>

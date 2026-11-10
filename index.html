@@ -1,102 +1,79 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Kumpulan video edukatif, lagu anak, dan pembelajaran interaktif untuk anak-anak Indonesia.">
-    <meta name="keywords" content="video edukasi anak, belajar berhitung, lagu anak, dunia anak pintar, edustream kids">
-    <meta property="og:title" content="Dunia Anak Pintar - Video Edukatif">
-    <meta property="og:description" content="Kumpulan video ceria dan edukatif untuk anak hebat Indonesia.">
-    <meta property="og:type" content="website">
-    <link rel="icon"
-        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
-    <title>Dunia Anak Pintar - Video Edukatif</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://pl29058231.profitablecpmratenetwork.com/7c/4d/2a/7c4d2a318920dfd30a5e31f17a80476b.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EduStream Kids – Video Belajar Seru untuk Anak 6–12 Tahun</title>
+  <meta name="description" content="Video edukasi seru untuk anak usia 6–12 tahun: matematika, sains, bahasa Indonesia, bahasa Inggris, dongeng, lagu anak, dan seni. Belajar sambil kumpulkan bintang!">
+  <meta name="theme-color" content="#8B5CF6">
+  <meta property="og:title" content="EduStream Kids – Video Belajar Seru untuk Anak">
+  <meta property="og:description" content="Nonton video edukasi, jawab kuis, dan kumpulkan bintang!">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
+<body data-page="home">
+  <header id="site-header"></header>
 
-<body>
-    <header class="navbar">
-        <div class="logo">
-            <i class="fa-solid fa-shapes"></i> EduStream Kids
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#" class="active">Beranda</a></li>
-                <li><a href="#videos">Video Belajar</a></li>
-            </ul>
-        </nav>
-    </header>
+  <main class="container" id="main">
+    <!-- Iklan: banner atas (728x90 / 468x60 / 320x50 otomatis) -->
+    <div class="ad-zone" data-ad="leaderboard"></div>
 
-    <!-- Ad Slot Component: Top Banner -->
-    <div class="ad-container" aria-label="Advertisement space">
-        <p>Ruang Iklan (728x90) <br><small>Letakkan script iklan banner Anda di sini</small></p>
-    </div>
-
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Mari Belajar sambil Bermain! 🚀</h1>
-            <p>Kumpulan video edukatif super seru untuk anak-anak hebat Indonesia. Yuk, tonton videonya dan tambah ilmu
-                baru setiap hari!</p>
-            <a href="#videos" class="btn-primary" aria-label="Mulai Menonton Video">Mulai Menonton <i
-                    class="fa-solid fa-play" aria-hidden="true"></i></a>
-        </div>
-        <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1540324155974-752320b9e847?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                alt="Anak belajar ceria" class="floating-img">
-        </div>
+    <section class="hero" aria-labelledby="hero-greet">
+      <div>
+        <h1 id="hero-greet">Halo, Teman Pintar! 👋</h1>
+        <p>Mau belajar apa hari ini? Pilih umurmu dulu, yuk!</p>
+        <div class="age-picker" id="age-picker" role="group" aria-label="Pilih umur"></div>
+      </div>
+      <div class="hero-mascot" id="hero-mascot" aria-hidden="true"></div>
     </section>
 
-    <!-- Categories -->
-    <section class="categories" id="categories">
-        <h2 class="section-title">Pilih Topik Belajar 🎨</h2>
-        <div class="category-list">
-            <button class="cat-btn active" data-filter="all" aria-label="Tampilkan semua kategori">Semua</button>
-            <button class="cat-btn" data-filter="math" aria-label="Kategori Matematika">Matematika 🔢</button>
-            <button class="cat-btn" data-filter="science" aria-label="Kategori Hewan dan Alam">Hewan & Alam 🐘</button>
-            <button class="cat-btn" data-filter="language" aria-label="Kategori Musik dan Cerita">Musik & Cerita
-                🎶</button>
-        </div>
+    <section class="section" aria-labelledby="cat-title">
+      <div class="section-head">
+        <h2 id="cat-title">📚 Pilih Pelajaran</h2>
+        <a class="more" href="kategori.html">Lihat semua →</a>
+      </div>
+      <div class="cat-grid" id="cat-grid"></div>
     </section>
 
-    <section class="video-section" id="videos">
-        <div class="video-grid" id="videoGrid">
-            <!-- Video Cards injected by JS -->
-        </div>
+    <section class="section" aria-labelledby="new-title">
+      <div class="section-head"><h2 id="new-title">✨ Video Terbaru</h2></div>
+      <div class="video-grid wide" id="grid-new"></div>
     </section>
 
-    <!-- Video Modal Popup -->
-    <div class="modal" id="videoModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-        <div class="modal-content">
-            <span class="close-btn" aria-label="Tutup video" role="button" tabindex="0">&times;</span>
-            <div class="iframe-container" id="iframeContainer">
-                <!-- iframe embedded here -->
-            </div>
-            <h3 id="modalTitle">Video Title</h3>
+    <!-- Iklan: kotak 300x250 -->
+    <div class="ad-zone" data-ad="rectangle"></div>
+
+    <section class="section" aria-label="Fakta seru hari ini">
+      <div class="fact-card">
+        <span class="bulb" aria-hidden="true">💡</span>
+        <div>
+          <h3>Tahukah Kamu?</h3>
+          <p id="fact-text"></p>
         </div>
-    </div>
+      </div>
+    </section>
 
-    <!-- Ad Slot Component: Bottom Banner -->
-    <div class="ad-container" aria-label="Advertisement space">
-        <p>Ruang Iklan (728x90) <br><small>Letakkan script iklan banner Anda di sini</small></p>
-    </div>
+    <!-- Iklan: native banner -->
+    <div class="ad-zone" data-ad="native"></div>
 
-    <!-- Back to top button -->
-    <button id="backToTop" class="back-to-top" aria-label="Kembali ke Atas"><i class="fa-solid fa-arrow-up"
-            aria-hidden="true"></i></button>
+    <section class="section" aria-labelledby="all-title">
+      <div class="section-head"><h2 id="all-title">🎬 Semua Video <small id="all-title-age" class="muted" style="font-size:18px"></small></h2></div>
+      <div class="video-grid wide" id="grid-all"></div>
+    </section>
 
-    <footer>
-        <p>&copy; 2026 Dunia Anak Pintar. Dibuat dengan <i class="fa-solid fa-heart" style="color: #ff5e7e;"
-                aria-hidden="true"></i> untuk
-            ciptakan senyum bahagia.</p>
-    </footer>
+    <!-- Iklan: banner bawah -->
+    <div class="ad-zone" data-ad="leaderboard"></div>
+  </main>
 
-    <script src="script.js"></script>
+  <footer id="site-footer"></footer>
+  <nav id="bottom-nav"></nav>
+
+  <script src="js/config.js"></script>
+  <script src="js/videos.js"></script>
+  <script src="js/app.js"></script>
 </body>
-
 </html>
